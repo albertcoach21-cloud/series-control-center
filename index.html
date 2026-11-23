@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0E0F13">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Sèries">
 <link rel="manifest" href="manifest.webmanifest">
@@ -13,196 +14,18 @@
 <title>Sèries Control Center</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-<style>
-/* VOICE: tranquil, de sofà; IDEA: la cartellera d'un cinema de nit;
-   PICTURE: els pòsters i les targetes de plataforma; COLOUR: fons fosc, color de cada marca;
-   TYPE: Space Grotesk títols + Inter; LAYOUT: una columna mòbil, navegació inferior */
-:root{--bg:#0E0F13;--card:#16181E;--card2:#1A1C23;--line:#23262E;--ink:#F2F2F4;--soft:#C9CDD4;--mute:#9AA0AA;--gold:#FFD166}
-*{box-sizing:border-box;min-width:0;-webkit-tap-highlight-color:transparent}
-html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 Inter,system-ui,sans-serif;overflow-x:clip}
-a{color:inherit;text-decoration:none}
-button{font:inherit;color:inherit}
-:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-.app{max-width:520px;margin:0 auto;min-height:100dvh;display:flex;flex-direction:column}
-main{flex:1;padding:calc(env(safe-area-inset-top) + 18px) 20px 110px;display:flex;flex-direction:column;gap:22px}
-.top{display:flex;justify-content:space-between;align-items:center;gap:12px}
-.week{font-size:13px;color:var(--mute);font-weight:500}
-h1{margin:4px 0 0;font:700 32px/1.05 'Space Grotesk',sans-serif;letter-spacing:-.5px}
-h2{margin:0;font-size:15px;font-weight:600;color:var(--soft)}
-.seg{display:flex;background:var(--card2);border-radius:20px;padding:3px;gap:2px;flex:none}
-.seg button{height:36px;padding:0 13px;border:0;border-radius:17px;background:transparent;color:var(--soft);font-size:13px;font-weight:600;cursor:pointer}
-.seg button[aria-selected=true]{background:var(--ink);color:var(--bg)}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.plat{position:relative;height:78px;border-radius:16px;display:flex;align-items:center;gap:10px;padding:0 10px 0 14px;overflow:hidden;cursor:pointer;border:0;text-align:left}
-.plat .txt{display:flex;flex-direction:column;gap:2px;flex:1}
-.plat b{font:700 19px/1.1 'Space Grotesk',sans-serif}
-.plat small{font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:.92}
-.plat img{width:40px;height:58px;border-radius:6px;object-fit:cover;flex:none;box-shadow:0 2px 8px rgba(0,0,0,.35)}
-.row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
-.poster{display:flex;flex-direction:column;gap:6px}
-.pimg{position:relative;aspect-ratio:2/3;border-radius:12px;overflow:hidden;background:var(--card)}
-.pimg img{width:100%;height:100%;object-fit:cover;display:block}
-.rank{position:absolute;top:6px;left:8px;font:700 26px/1 'Space Grotesk',sans-serif;color:#fff;text-shadow:0 2px 6px rgba(0,0,0,.7)}
-.tag{position:absolute;bottom:7px;left:7px;font-size:10px;font-weight:700;padding:3px 6px;border-radius:6px}
-.ptitle{font-size:13px;font-weight:600;line-height:1.25}
-.note{font-size:12px;color:var(--mute);margin:-10px 0 0}
-.sk{background:linear-gradient(90deg,#16181E,#1E2027,#16181E);background-size:200% 100%;animation:sk 1.2s infinite}
-@keyframes sk{to{background-position:-200% 0}}
-@media(prefers-reduced-motion:reduce){.sk{animation:none}}
-.err{background:#3A1416;color:#FFD9D9;padding:12px 14px;border-radius:12px;font-size:14px}
-nav{position:fixed;left:0;right:0;bottom:0;background:#14161B;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
-nav .in{max-width:520px;margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));height:68px}
-nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:11px;font-weight:600;color:var(--mute)}
-nav a[aria-current=page]{color:#fff}
-.toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:20px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .2s}
-.toast.on{opacity:1}
-footer{font-size:11px;color:#8A909A;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-</style>
+<link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 <div class="app">
-<main>
-  <header>
-    <div class="top">
-      <span class="week" id="week">Espanya</span>
-      <div class="seg" role="tablist" aria-label="Tipus de contingut">
-        <button role="tab" data-mode="tv" aria-selected="true">Sèries</button>
-        <button role="tab" data-mode="movie" aria-selected="false">Pel·lícules</button>
-      </div>
-    </div>
-    <h1 id="title">Sèries</h1>
-  </header>
-
-  <section style="display:flex;flex-direction:column;gap:12px">
-    <h2>Plataformes</h2>
-    <div class="grid" id="plats"></div>
-  </section>
-
-  <section style="display:flex;flex-direction:column;gap:12px">
-    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px">
-      <h2>El més vist ara</h2>
-      <span style="font-size:12px;color:var(--mute)">Totes les plataformes</span>
-    </div>
-    <div class="row" id="hot"></div>
-  </section>
-  <p class="note" id="srcnote">Popularitat a Espanya segons TMDB. El top 10 oficial arribarà amb l'actualització diària.</p>
-
-  <footer>
-    <span>Dades i imatges: TMDB · Plataformes: JustWatch.</span>
-    <span>Aquesta app fa servir l'API de TMDB però TMDB no l'avala ni la certifica.</span>
-  </footer>
-</main>
-
-<nav aria-label="Navegació principal"><div class="in">
-  <a href="#" aria-current="page"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>Inici</a>
-  <a href="#" data-soon="La meva llista"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>La meva llista</a>
-  <a href="#" data-soon="Per a tu"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg>Per a tu</a>
-</div></nav>
-<div class="toast" id="toast" role="status"></div>
+  <main id="view" tabindex="-1"></main>
+  <nav aria-label="Navegació principal"><div class="in">
+    <a href="#/" data-nav="home"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>Inici</a>
+    <a href="#/llista" data-nav="llista"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>La meva llista</a>
+    <a href="#/pertu" data-nav="pertu"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg>Per a tu</a>
+  </div></nav>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </div>
-
-<script>
-{
-const KEY = '3cae83d0c61c9003373b08c875a48199';
-const API = 'https://api.themoviedb.org/3';
-const IMG = 'https://image.tmdb.org/t/p/';
-const REGION = 'ES', LANG = 'es-ES';
-
-const PLATS = [
-  {name:'Netflix',     bg:'#E50914', fg:'#fff',    re:/^netflix$/i,               id:8},
-  {name:'HBO Max',     bg:'#0026D9', fg:'#fff',    re:/^(hbo )?max$/i,            id:1899},
-  {name:'Prime Video', bg:'#00A8E1', fg:'#04131A', re:/^amazon prime video$/i,    id:119},
-  {name:'Disney+',     bg:'#0B2FA8', fg:'#fff',    re:/^disney ?(\+|plus)$/i,     id:337},
-  {name:'Apple TV+',   bg:'#2A2B30', fg:'#fff',    re:/^apple tv( \+| plus)?$/i,  id:350},
-  {name:'Movistar+',   bg:'#26B5F7', fg:'#031722', re:/^movistar ?(plus\+?|\+)$/i,id:149},
-  {name:'SkyShowtime', bg:'#5A2BD6', fg:'#fff',    re:/^skyshowtime$/i,           id:1773},
-  {name:'Filmin',      bg:'#F3EFE6', fg:'#16140F', re:/^filmin$/i,                id:63}
-];
-
-const $ = s => document.querySelector(s);
-const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-let mode = 'tv';
-try { mode = localStorage.getItem('scc-mode') || 'tv'; } catch (e) {}
-const cache = {};
-
-async function tmdb(path, params = {}) {
-  const q = new URLSearchParams({api_key: KEY, language: LANG, ...params});
-  const url = API + path + '?' + q;
-  if (cache[url]) return cache[url];
-  const r = await fetch(url);
-  if (!r.ok) throw new Error('TMDB ' + r.status);
-  return (cache[url] = await r.json());
-}
-
-async function resolveProviders() {
-  try {
-    const [tv, mv] = await Promise.all([
-      tmdb('/watch/providers/tv', {watch_region: REGION}),
-      tmdb('/watch/providers/movie', {watch_region: REGION})
-    ]);
-    const all = [...(tv.results || []), ...(mv.results || [])];
-    for (const p of PLATS) {
-      const m = all.filter(x => p.re.test(x.provider_name.trim()));
-      if (m.length) p.id = m.sort((a, b) => (a.display_priority ?? 99) - (b.display_priority ?? 99))[0].provider_id;
-    }
-  } catch (e) { /* manté els ids per defecte */ }
-}
-
-function skeleton() {
-  $('#plats').innerHTML = PLATS.map(p =>
-    `<button class="plat" style="background:${p.bg};color:${p.fg}" data-plat="${esc(p.name)}"><span class="txt"><b>${esc(p.name)}</b><small>Carregant…</small></span></button>`).join('');
-  $('#hot').innerHTML = [1,2,3].map(() => `<div class="poster"><div class="pimg sk"></div><span class="ptitle sk" style="height:14px;border-radius:4px"></span></div>`).join('');
-}
-
-async function load() {
-  const m = mode;
-  $('#title').textContent = m === 'tv' ? 'Sèries' : 'Pel·lícules';
-  document.querySelectorAll('.seg button').forEach(b => b.setAttribute('aria-selected', String(b.dataset.mode === m)));
-  skeleton();
-  try {
-    const res = await Promise.all(PLATS.map(p =>
-      tmdb('/discover/' + m, {watch_region: REGION, with_watch_providers: p.id, with_watch_monetization_types: 'flatrate', sort_by: 'popularity.desc', page: 1})
-        .then(d => ({p, items: d.results || []})).catch(() => ({p, items: []}))));
-    if (m !== mode) return;
-    $('#plats').innerHTML = res.map(({p, items}) => {
-      const t = items[0];
-      const name = t ? (t.name || t.title) : 'Sense dades';
-      const img = t && t.poster_path ? `<img src="${IMG}w154${t.poster_path}" alt="" loading="lazy">` : '';
-      return `<button class="plat" style="background:${p.bg};color:${p.fg}" data-plat="${esc(p.name)}"><span class="txt"><b>${esc(p.name)}</b><small>Nº1: ${esc(name)}</small></span>${img}</button>`;
-    }).join('');
-    const tops = res.filter(r => r.items[0]).map(r => ({p: r.p, t: r.items[0]}))
-      .sort((a, b) => b.t.popularity - a.t.popularity).slice(0, 3);
-    $('#hot').innerHTML = tops.map((x, i) => `
-      <a class="poster" href="#" data-soon="Fitxa de ${esc(x.t.name || x.t.title)}">
-        <span class="pimg">${x.t.poster_path ? `<img src="${IMG}w342${x.t.poster_path}" alt="Pòster de ${esc(x.t.name || x.t.title)}" loading="lazy">` : ''}
-          <span class="rank">${i + 1}</span>
-          <span class="tag" style="background:${x.p.bg};color:${x.p.fg}">${esc(x.p.name)}</span></span>
-        <span class="ptitle">${esc(x.t.name || x.t.title)}</span>
-      </a>`).join('');
-  } catch (e) {
-    $('#hot').innerHTML = `<div class="err" style="grid-column:1/-1">No s'han pogut carregar les dades de TMDB. Comprova la connexió i torna-ho a provar.</div>`;
-  }
-}
-
-let tt;
-function toast(msg) {
-  const el = $('#toast'); el.textContent = msg; el.classList.add('on');
-  clearTimeout(tt); tt = setTimeout(() => el.classList.remove('on'), 1800);
-}
-
-document.addEventListener('click', e => {
-  const seg = e.target.closest('.seg button');
-  if (seg) { mode = seg.dataset.mode; try { localStorage.setItem('scc-mode', mode); } catch (x) {} load(); return; }
-  const plat = e.target.closest('[data-plat]');
-  if (plat) { toast(plat.dataset.plat + ': pròxim mòdul'); return; }
-  const soon = e.target.closest('[data-soon]');
-  if (soon) { e.preventDefault(); toast(soon.dataset.soon + ': pròxim mòdul'); }
-});
-
-const d = new Date();
-$('#week').textContent = d.toLocaleDateString('ca-ES', {weekday: 'long', day: 'numeric', month: 'short'}) + ' · Espanya';
-resolveProviders().then(load);
-}
-</script>
+<script src="app.js?v=2"></script>
 </body>
 </html>
