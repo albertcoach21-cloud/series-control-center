@@ -1,10 +1,10 @@
 {
-  "updated": "2026-11-23",
-  "note": "Netflix: top 10 diari d'Espanya del 19 de novembre (FlixPatrol). Altres plataformes: nº1 a Espanya de la setmana (FlixPatrol); la resta de posicions es completa amb la popularitat de TMDB.",
+  "updated": "2026-11-26",
+  "note": "Netflix: avui no s'han pogut llegir dades recents fiables d'Espanya (FlixPatrol / Netflix Tudum). Altres plataformes: nº1 a Espanya (FlixPatrol, 20-22 nov); la resta de posicions es completa amb la popularitat de TMDB.",
   "platforms": {
     "Netflix": {
-      "tv": { "label": "Top 10 Netflix Espanya · 19 nov", "titles": ["Murder in Galicia", "The Law of Beasts", "The Body", "ChiaroScuro", "Las hijas de la criada", "The Empress", "Lupin", "Black Doves", "Alicia's Law", "Anaesthesia"] },
-      "movie": { "label": "Top 10 Netflix Espanya · 19 nov", "titles": ["Guarding Stars", "Heartland", "Never Surrender", "The Good Liar", "The Christmas Switch", "The Grinch", "Unprotected: Murder in Galicia", "Until Dawn", "Collision Course", "The Unthinkable Daughter"] }
+      "tv": { "label": "", "titles": [] },
+      "movie": { "label": "", "titles": [] }
     },
     "HBO Max": {
       "tv": { "label": "Nº1 a Espanya · 22 nov", "titles": ["Infamy"] },
