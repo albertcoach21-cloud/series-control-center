@@ -1,38 +1,140 @@
 {
-  "updated": "2026-11-26",
-  "note": "Netflix: avui no s'han pogut llegir dades recents fiables d'Espanya (FlixPatrol / Netflix Tudum). Altres plataformes: nº1 a Espanya (FlixPatrol, 20-22 nov); la resta de posicions es completa amb la popularitat de TMDB.",
+  "updated": "2026-11-27",
+  "note": "Netflix: top 10 setmanal oficial d'Espanya (16-22 nov). HBO Max: top 10 d'Espanya del 26 nov (StreamRank). Altres plataformes: nº1 a Espanya (FlixPatrol, 22 nov); avui no s'han pogut llegir dades més recents.",
   "platforms": {
     "Netflix": {
-      "tv": { "label": "", "titles": [] },
-      "movie": { "label": "", "titles": [] }
+      "tv": {
+        "label": "Top 10 setmanal Netflix Espanya · 16-22 nov",
+        "titles": [
+          "El crimen de Pazos",
+          "La ley de las bestias",
+          "El cuerpo",
+          "El claroscuro",
+          "Las hijas de la criada",
+          "La emperatriz",
+          "Bienvenidos a El Bulli",
+          "Lupin",
+          "Palomas negras",
+          "Anestesia"
+        ]
+      },
+      "movie": {
+        "label": "Top 10 setmanal Netflix Espanya · 16-22 nov",
+        "titles": [
+          "Cómo proteger a una estrella",
+          "Heartland",
+          "El intercambio navideño",
+          "El buen mentiroso",
+          "No nos rendimos",
+          "El Grinch",
+          "Colisión",
+          "Hermanastras",
+          "Desprotexida: El crimen de Pazos",
+          "Until Dawn: Noche de terror"
+        ]
+      }
     },
     "HBO Max": {
-      "tv": { "label": "Nº1 a Espanya · 22 nov", "titles": ["Infamy"] },
-      "movie": { "label": "Nº1 a Espanya · 22 nov", "titles": ["The End of Oak Street"] }
+      "tv": {
+        "label": "Top 10 HBO Max Espanya · 26 nov",
+        "titles": [
+          "The Gilded Age",
+          "Infamy",
+          "Rage (Furia)",
+          "The Good Daughter",
+          "YAGA",
+          "Georgie & Mandy's First Marriage",
+          "Melania Rea",
+          "Silent Night",
+          "Harry Potter: Wizards of Baking",
+          "A Killer Among Friends"
+        ]
+      },
+      "movie": {
+        "label": "Top 10 HBO Max Espanya · 26 nov",
+        "titles": [
+          "The End of Oak Street",
+          "Tres de más",
+          "San Antonio",
+          "Zodiac",
+          "Constantine",
+          "The Whale",
+          "Everything Everywhere All at Once",
+          "1917",
+          "Green Book",
+          "There's Still Tomorrow"
+        ]
+      }
     },
     "Prime Video": {
-      "tv": { "label": "Nº1 a Espanya · 22 nov", "titles": ["Vizinhos para Sempre"] },
-      "movie": { "label": "Nº1 a Espanya · 22 nov", "titles": ["Perfect Liars"] }
+      "tv": {
+        "label": "Nº1 a Espanya · 22 nov",
+        "titles": [
+          "Vizinhos para Sempre"
+        ]
+      },
+      "movie": {
+        "label": "Nº1 a Espanya · 22 nov",
+        "titles": [
+          "Perfect Liars"
+        ]
+      }
     },
     "Disney+": {
-      "tv": { "label": "Nº1 a Espanya · 22 nov", "titles": ["Percy Jackson and the Olympians"] },
-      "movie": { "label": "", "titles": [] }
+      "tv": {
+        "label": "Nº1 a Espanya · 22 nov",
+        "titles": [
+          "Percy Jackson and the Olympians"
+        ]
+      },
+      "movie": {
+        "label": "",
+        "titles": []
+      }
     },
     "Apple TV+": {
-      "tv": { "label": "", "titles": [] },
-      "movie": { "label": "Nº1 a Espanya · 20 nov", "titles": ["Being Heumann"] }
+      "tv": {
+        "label": "",
+        "titles": []
+      },
+      "movie": {
+        "label": "",
+        "titles": []
+      }
     },
     "Movistar+": {
-      "tv": { "label": "", "titles": [] },
-      "movie": { "label": "", "titles": [] }
+      "tv": {
+        "label": "",
+        "titles": []
+      },
+      "movie": {
+        "label": "",
+        "titles": []
+      }
     },
     "SkyShowtime": {
-      "tv": { "label": "Nº1 a Espanya · 22 nov", "titles": ["Tulsa King"] },
-      "movie": { "label": "Nº1 a Espanya · 22 nov", "titles": ["Passenger"] }
+      "tv": {
+        "label": "Nº1 a Espanya · 22 nov",
+        "titles": [
+          "Tulsa King"
+        ]
+      },
+      "movie": {
+        "label": "Nº1 a Espanya · 22 nov",
+        "titles": [
+          "Passenger"
+        ]
+      }
     },
     "Filmin": {
-      "tv": { "label": "", "titles": [] },
-      "movie": { "label": "", "titles": [] }
+      "tv": {
+        "label": "",
+        "titles": []
+      },
+      "movie": {
+        "label": "",
+        "titles": []
+      }
     }
   }
 }
