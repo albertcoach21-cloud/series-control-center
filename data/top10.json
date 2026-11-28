@@ -1,105 +1,158 @@
 {
-  "updated": "2026-11-27",
-  "note": "Netflix: top 10 setmanal oficial d'Espanya (16-22 nov). HBO Max: top 10 d'Espanya del 26 nov (StreamRank). Altres plataformes: nº1 a Espanya (FlixPatrol, 22 nov); avui no s'han pogut llegir dades més recents.",
+  "updated": "2026-11-28",
+  "note": "Netflix, HBO Max, Prime Video, Disney+ i Apple TV+: top 10 d'Espanya del 27 nov (StreamRank); de les sèries de Netflix només hi havia el top 3 d'aquell dia. SkyShowtime: nº1 a Espanya (FlixPatrol, 22 nov). Movistar+ i Filmin: sense dades fiables.",
   "platforms": {
     "Netflix": {
       "tv": {
-        "label": "Top 10 setmanal Netflix Espanya · 16-22 nov",
+        "label": "Top 3 Netflix Espanya · 27 nov",
         "titles": [
-          "El crimen de Pazos",
-          "La ley de las bestias",
-          "El cuerpo",
-          "El claroscuro",
-          "Las hijas de la criada",
-          "La emperatriz",
-          "Bienvenidos a El Bulli",
-          "Lupin",
-          "Palomas negras",
-          "Anestesia"
+          "Murder in Galicia",
+          "Gènesi",
+          "The Law of Beasts"
         ]
       },
       "movie": {
-        "label": "Top 10 setmanal Netflix Espanya · 16-22 nov",
+        "label": "Top 10 Netflix Espanya · 27 nov",
         "titles": [
-          "Cómo proteger a una estrella",
+          "Guarding Stars",
+          "The Mosquito Bowl",
+          "Steps",
+          "The Grinch",
+          "The Good Liar",
+          "Chiara Ferragni: Front Facing",
+          "The Christmas Switch",
           "Heartland",
-          "El intercambio navideño",
-          "El buen mentiroso",
-          "No nos rendimos",
-          "El Grinch",
-          "Colisión",
-          "Hermanastras",
-          "Desprotexida: El crimen de Pazos",
-          "Until Dawn: Noche de terror"
+          "The Conjuring: Last Rites",
+          "Collision Course"
         ]
       }
     },
     "HBO Max": {
       "tv": {
-        "label": "Top 10 HBO Max Espanya · 26 nov",
+        "label": "Top 10 HBO Max Espanya · 27 nov",
         "titles": [
           "The Gilded Age",
           "Infamy",
-          "Rage (Furia)",
           "The Good Daughter",
-          "YAGA",
+          "Rage (Furia)",
           "Georgie & Mandy's First Marriage",
+          "YAGA",
           "Melania Rea",
-          "Silent Night",
+          "A Killer Among Friends",
           "Harry Potter: Wizards of Baking",
-          "A Killer Among Friends"
+          "Silent Night"
         ]
       },
       "movie": {
-        "label": "Top 10 HBO Max Espanya · 26 nov",
+        "label": "Top 10 HBO Max Espanya · 27 nov",
         "titles": [
-          "The End of Oak Street",
           "Tres de más",
+          "The End of Oak Street",
           "San Antonio",
           "Zodiac",
           "Constantine",
           "The Whale",
-          "Everything Everywhere All at Once",
-          "1917",
           "Green Book",
-          "There's Still Tomorrow"
+          "1917",
+          "Everything Everywhere All at Once",
+          "Machine Gun Preacher"
         ]
       }
     },
     "Prime Video": {
       "tv": {
-        "label": "Nº1 a Espanya · 22 nov",
+        "label": "Top 10 Prime Video Espanya · 27 nov",
         "titles": [
-          "Vizinhos para Sempre"
+          "The Lord of the Rings: The Rings of Power",
+          "Neighbors Forever",
+          "Blade Runner 2099",
+          "Campus Drivers",
+          "Love in Disguise",
+          "The Terminal List",
+          "Mía es la venganza",
+          "Off Campus",
+          "Carrie",
+          "Pa' Quererte"
         ]
       },
       "movie": {
-        "label": "Nº1 a Espanya · 22 nov",
+        "label": "Top 10 Prime Video Espanya · 27 nov",
         "titles": [
-          "Perfect Liars"
+          "Clashing Through the Snow",
+          "Perfect Liars",
+          "The Hunger Games: The Ballad of Songbirds & Snakes",
+          "The Hunger Games: Catching Fire",
+          "Seven Snipers",
+          "The Hunger Games: Mockingjay - Part 1",
+          "The Mongoose",
+          "Harry Potter and the Philosopher's Stone",
+          "The Hunger Games: Mockingjay - Part 2",
+          "Drive - The Pretenders"
         ]
       }
     },
     "Disney+": {
       "tv": {
-        "label": "Nº1 a Espanya · 22 nov",
+        "label": "Top 10 Disney+ Espanya · 27 nov",
         "titles": [
-          "Percy Jackson and the Olympians"
+          "The Remarried Empress",
+          "All's Fair",
+          "Rivals",
+          "Percy Jackson and the Olympians",
+          "Trackers",
+          "Merry Berry Love",
+          "VisionQuest",
+          "Dragon Ball Super: Beerus",
+          "9-1-1",
+          "Loki"
         ]
       },
       "movie": {
-        "label": "",
-        "titles": []
+        "label": "Top 10 Disney+ Espanya · 27 nov",
+        "titles": [
+          "Avengers: Endgame",
+          "The Grinch",
+          "Home Alone",
+          "Moana",
+          "Home Alone 2: Lost in New York",
+          "Toy Story 5",
+          "How the Grinch Stole Christmas",
+          "Frozen",
+          "The Fantastic 4: First Steps",
+          "Thunderbolts*"
+        ]
       }
     },
     "Apple TV+": {
       "tv": {
-        "label": "",
-        "titles": []
+        "label": "Top 10 Apple TV Espanya · 27 nov",
+        "titles": [
+          "Nocturne",
+          "12 12 12",
+          "Ted Lasso",
+          "Slow Horses",
+          "Stick",
+          "Silo",
+          "Brothers",
+          "Dark Matter",
+          "Severance",
+          "Your Friends & Neighbors"
+        ]
       },
       "movie": {
-        "label": "",
-        "titles": []
+        "label": "Top 10 Apple TV Espanya · 27 nov",
+        "titles": [
+          "Way of the Warrior Kid",
+          "Mayday",
+          "A Charlie Brown Thanksgiving",
+          "Sunshine",
+          "Tenzing",
+          "F1",
+          "Being Heumann",
+          "Matchbox",
+          "Wolfs",
+          "The Family Plan 2"
+        ]
       }
     },
     "Movistar+": {
